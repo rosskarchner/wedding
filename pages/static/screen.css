@@ -1,0 +1,25 @@
+nav{
+	margin-top:5.5em;
+
+}
+
+.photo {
+	border: thick #000000 solid;
+	padding:3px;
+	margin: 10px;
+}
+
+nav li{
+	list-style-type:none;
+	margin: 3px 0px;
+}
+
+nav li{
+	padding:3px;
+}
+
+nav li.current{
+	background-color:black;
+	color:white;
+
+}

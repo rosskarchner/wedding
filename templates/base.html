@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+
+<head>
+<meta charset="utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="/static/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/static/blueprint/print.css" type="text/css" media="print"> 
+  <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/static/blueprint/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+<link rel="stylesheet" type="text/css" href="/static/screen.css" />
+{% block extra %}
+
+
+{% endblock %}
+
+</head>
+
+<body>
+
+
+<div id="frame" class="container">
+	<header class="span-24 last">{% block header %}
+	<h1>Patty & Ross</h1>
+	{% endblock %}</header>
+
+	<div class="span-24 last">
+	<nav class="span-4">
+		<ul>
+			{% for link in navlinks %}
+			{{ link.as_html|safe }}
+			
+			{% endfor %}
+		</ul>
+	</nav>
+	<article class="span-20 last">
+	{% block main %}
+	{% endblock %}
+	</article>
+
+
+</div>
+
+
+</body>
+

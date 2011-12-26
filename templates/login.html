@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+
+<head>
+<meta charset="utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Bilbo+Swash+Caps' rel='stylesheet' type='text/css'>
+ <link rel="stylesheet" href="/static/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="/static/blueprint/print.css" type="text/css" media="print"> 
+  <!--[if lt IE 8]>
+    <link rel="stylesheet" href="/static/blueprint/ie.css" type="text/css" media="screen, projection">
+  <![endif]-->
+<link rel="stylesheet" type="text/css" href="/static/screen.css" />
+
+</head>
+
+<body>
+
+<div id="loginform" class="container">
+<form method="post">
+
+<table class="span-12 push-6">
+<tr><td><label>{{form.your_name.label}}</label></td><td>{{ form.your_name }}
+{% if form.your_name.errors %}<span class="error">{{form.your_name.errors.0}}</span>{% endif %}</td></tr>
+<tr><td><label>{{form.secret.label}}</label></td><td>{{ form.secret }}
+{% if form.secret.error %}<span class="error">{{form.secret.errors.0}}</span>{% endif %}
+</td></tr>
+<tr><td>&nbsp;</td><td> <input type="submit" value="Get me in there!"/> </td></tr>
+</table>
+
+{% csrf_token %}
+
+</form>
+</div>
+
+</body>
+</html>

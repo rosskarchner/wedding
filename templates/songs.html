@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %} String/Karchner Wedding {% endblock %}
+
+
+
+{% block main %}
+
+
+<h2>What's your favorite wedding song?</h2>
+<div id="info span-20">
+<form method="POST">
+<table>
+<tr><td>{{form.title.label}}</td>
+<td>{{form.title}} {{form.title.errors}}</td>
+</tr>
+<tr><td>{{form.artist.label}}</td>
+<td>{{form.artist}}{{form.artist.errors}}</td>
+</tr>
+<tr><td>{{form.comment.label}}</td>
+<td>{{form.comment}}{{form.comment.errors}}</td>
+</tr>
+<tr><td>{{form.your_name.label}}</td>
+<td>{{form.your_name}}{{form.your_name.errors}}</td>
+</tr>
+</table>
+<input type="submit" value="Submit song!"/>
+{% csrf_token %}
+</form>
+<h2>Song Suggestions</h2>
+<ul>
+{% for song in songs %}
+<li><em>{{ song.title}}</em> ({{ song.artist }})
+{% if song.comment %} <p>{{song.comment}}</p>{% endif %}
+<br/>{{ song.your_name }}
+</li>
+{% endfor %}
+</ul>
+
+</div>
+{% endblock %}
